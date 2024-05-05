@@ -15,8 +15,8 @@
                     <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                         {{ __('Dashboard') }}
                     </x-nav-link>
-                    <x-nav-link :href="route('sensors')" :active="request()->routeIs('sensors')">
-                        {{ __('I miei sensori') }}
+                    <x-nav-link :href="route('sensori')" :active="request()->routeIs('sensori')">
+                        {{ __('Sensori') }}
                     </x-nav-link>
                 </div>
             </div>
@@ -38,7 +38,7 @@
 
                     <x-slot name="content">
                         <x-dropdown-link :href="route('profile.edit')">
-                            {{ __('Profile') }}
+                            Profilo
                         </x-dropdown-link>
 
                         <!-- Authentication -->
@@ -84,7 +84,7 @@
 
             <div class="mt-3 space-y-1">
                 <x-responsive-nav-link :href="route('profile.edit')">
-                    {{ __('Profile') }}
+                    Profilo
                 </x-responsive-nav-link>
 
                 <!-- Authentication -->

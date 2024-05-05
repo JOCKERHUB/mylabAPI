@@ -17,6 +17,7 @@ return new class extends Migration
             $table->string('description')->nullable();
             $table->string('vendor')->nullable();
             $table->string('type')->nullable();
+            $table->json('metadata')->nullable();
             $table->timestamps();
         });
     }
