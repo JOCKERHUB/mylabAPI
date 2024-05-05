@@ -17,6 +17,8 @@
         <option>Temperatura</option>
         <option>Consumo Elettrico</option>
     </select>
+    <h4 class="mb-2 mt-2">Inserisci il nome del sensore: </h4>
+    <input type="text" placeholder="Inserisci il nome del sensore" class="input input-bordered input-secondary w-full max-w-xs" />
     <button class="btn btn-accent mx-2">Crea!</button>
 
                     
