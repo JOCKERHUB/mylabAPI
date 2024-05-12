@@ -20,6 +20,7 @@ Route::get('/dashboard', function () {
 Route::middleware('auth')->group(function () {
     Route::get('/sensori', [SensorController::class, 'index'])->name('sensori');
     Route::get('/aggiungi-sensore', [SensorController::class, 'add'])->name('sensori.add');
+    Route::post('/aggiungi-sensore', [SensorController::class,'addSensor'])->name('sensori.addSensor');
 });
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

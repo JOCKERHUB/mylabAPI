@@ -1,5 +1,3 @@
-
-
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
@@ -11,17 +9,35 @@
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 text-gray-900">
-                    <h4 class="mb-2">Scegli modello sensore: </h4>
-    <select class="select select-bordered w-full max-w-xs">
-        <option selected>Umidità</option>
-        <option>Temperatura</option>
-        <option>Consumo Elettrico</option>
-    </select>
-    <h4 class="mb-2 mt-2">Inserisci il nome del sensore: </h4>
-    <input type="text" placeholder="Inserisci il nome del sensore" class="input input-bordered input-secondary w-full max-w-xs" />
-    <button class="btn btn-accent mx-2">Crea!</button>
+                    <form action="{{ route('sensori.addSensor') }}" method="POST" class="space-y-4">
+                        @csrf
+                        <div class="flex flex-col">
+                            <label class="font-semibold text-gray-700">Nome</label>
+                            <input name="name" class="form-input mt-1 block w-full rounded-3xl" type="text"
+                                placeholder="Inserisci il tuo nome">
+                        </div>
+                        <div class="flex flex-col">
+                            <label class="font-semibold text-gray-700">Descrizione</label>
+                            <input name="description" class="form-input mt-1 block w-full rounded-3xl" type="text"
+                                placeholder="Inserisci la descrizione">
+                        </div>
+                        <div class="flex flex-col">
+                            <label class="font-semibold text-gray-700">Fornitore</label>
+                            <input name="vendor" class="form-input mt-1 block w-full rounded-3xl" type="text"
+                                placeholder="Inserisci il fornitore">
+                        </div>
+                        <div class="flex flex-col">
+                            <label class="font-semibold text-gray-700">Tipo</label>
+                            <h4 class="mb-2">Scegli modello sensore: </h4>
+                            <select name="type" class="form-select mt-1 block w-full rounded-3xl">
+                                <option value="humidity" selected>Umidità</option>
+                                <option value="temperature">Temperatura</option>
+                                <option value="energy">Consumo Elettrico</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="btn btn-accent mx-2 rounded-3xl">Crea!</button>
+                    </form>
 
-                    
 
                 </div>
             </div>
