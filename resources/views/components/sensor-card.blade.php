@@ -24,7 +24,7 @@
                         @endif
                     </div>
 
-                    <div class="card-actions justify-end ">
+                    <div class="card-actions justify-between">
                         <button class="btn btn-secondary rounded-3xl">Mostra Dettagli</button>
                     </div>
                 </div>
