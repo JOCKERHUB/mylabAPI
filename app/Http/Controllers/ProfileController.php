@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\ProfileUpdateRequest;
+use App\Models\User;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -56,5 +57,16 @@ class ProfileController extends Controller
         $request->session()->regenerateToken();
 
         return Redirect::to('/');
+    }
+
+    public function generateApiToken(Request $request): RedirectResponse
+    {
+        //$request->user()->tokens()->delete();
+
+        $token = $request->user()->createToken('api-token')->plainTextToken;
+
+        User::where('id', Auth::user()->id)->update(['token' => $token]);
+        
+        return redirect()->back()->with('token', $token);
     }
 }
