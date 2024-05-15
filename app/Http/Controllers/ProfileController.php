@@ -65,7 +65,7 @@ class ProfileController extends Controller
 
         $token = $request->user()->createToken('api-token')->plainTextToken;
 
-        User::where('id', Auth::user()->id)->update(['token' => $token]);
+        // User::where('id', Auth::user()->id)->update(['token' => $token]);
         
         return redirect()->back()->with('token', $token);
     }
