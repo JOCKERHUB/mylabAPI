@@ -16,7 +16,7 @@
                 <div class="p-6 text-lg text-gray-900">
                     <h1 class="text-center text-2xl">I Miei Sensori</h1>
                 </div>
-                <div class="mb-4 grid grid-cols-3">
+                <div class="mb-4 grid grid-cols-3 ">
                     @foreach ($sensors as $sensor)
                         @include('components.sensor-card')
                     @endforeach

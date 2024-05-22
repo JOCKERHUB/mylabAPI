@@ -1,4 +1,4 @@
-<div class="flex items-center">
+<div class="flex items-center border m-4 rounded-xl hover:shadow-lg transition duration-300">
     @if ($sensor->type == 'temperature')
         <i class="bi bi-thermometer-sun m-4 text-6xl text-gray-700"></i>
     @elseif ($sensor->type == 'humidity')

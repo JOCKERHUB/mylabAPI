@@ -16,7 +16,7 @@ class MeasuresSeeder extends Seeder
             [
                 'val' => 22,
                 'unit' => '°C',
-                'sensor_id'=> 2,
+                'sensor_id'=> 1,
             ],
             [
                 'val' => 25,
